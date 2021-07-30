@@ -7,4 +7,97 @@
 body {
   font-size: 1rem;
   font-family: "Poppins", sans-serif;
+  background: url("images/bg-intro-mobile.png");
+  background-color: hsl(0, 100%, 74%);
+  height: 100vh;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.highlight {
+  color: hsl(0, 100%, 74%);
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  margin-top: 3em;
+  margin-bottom: 0.75em;
+}
+
+.signup-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 85%;
+  margin: 0 auto;
+}
+
+.text-content p {
+  text-align: center;
+  color: white;
+  margin-bottom: 3em;
+  opacity: 0.8;
+}
+
+.offer-container {
+  background-color: hsl(248, 32%, 49%);
+  border-radius: 6px;
+  padding: 1em 4em;
+  margin-bottom: 1.5em;
+}
+
+.offer-container p {
+  font-size: 0.875rem;
+  text-align: center;
+  color: white;
+}
+
+.signup-form {
+  text-align: center;
+  background-color: white;
+  padding: 1em;
+  border-radius: 8px;
+}
+
+input[type="text"],
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 1em;
+  border: 1px solid hsl(246, 25%, 77%);
+  border-radius: 6px;
+  margin-bottom: 0.75em;
+}
+
+input[type="text"]::placeholder,
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="password"]::placeholder {
+  font-family: "Poppins", sans-serif;
+  color: hsl(249, 10%, 26%);
+  font-weight: 600;
+  opacity: 0.7;
+}
+
+input[type="submit"] {
+  width: 100%;
+  padding: 1em;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: hsl(154, 59%, 51%);
+  border: none;
+  border-radius: 6px;
+  margin-bottom: 0.75em;
+}
+
+.signup-form p {
+  width: 75%;
+  font-size: 0.625rem;
+  color: hsl(246, 25%, 77%);
+  margin: 0 auto;
 }
