@@ -12,6 +12,14 @@ body {
   height: 100vh;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  border-bottom: 1px solid hsl(0, 100%, 74%);
+}
+
 .bold {
   font-weight: 600;
 }
@@ -25,6 +33,7 @@ h1 {
   color: white;
   margin-top: 3em;
   margin-bottom: 0.75em;
+  max-width: 500px;
 }
 
 .signup-section {
@@ -40,6 +49,7 @@ h1 {
   color: white;
   margin-bottom: 3em;
   opacity: 0.8;
+  max-width: 500px;
 }
 
 .offer-container {
@@ -47,6 +57,8 @@ h1 {
   border-radius: 6px;
   padding: 1em 4em;
   margin-bottom: 1.5em;
+  max-width: 500px;
+  box-shadow: 0px 8px 2px 0px rgba(0, 0, 0, 0.15);
 }
 
 .offer-container p {
@@ -60,6 +72,8 @@ h1 {
   background-color: white;
   padding: 1em;
   border-radius: 8px;
+  max-width: 500px;
+  box-shadow: 0px 8px 2px 0px rgba(0, 0, 0, 0.15);
 }
 
 input[type="text"],
@@ -93,6 +107,8 @@ input[type="submit"] {
   border: none;
   border-radius: 6px;
   margin-bottom: 0.75em;
+  cursor: pointer;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.4);
 }
 
 .signup-form p {
@@ -100,4 +116,45 @@ input[type="submit"] {
   font-size: 0.625rem;
   color: hsl(246, 25%, 77%);
   margin: 0 auto;
+}
+
+@media (min-width: 1000px) {
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    gap: 6em;
+  }
+
+  h1 {
+    font-size: 3rem;
+    text-align: left;
+    margin-bottom: 0.25em;
+  }
+
+  .text-content p {
+    text-align: left;
+  }
+
+  .signup-form {
+    padding: 2.5em;
+  }
+
+  input[type="text"],
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    padding: 1.5em;
+    margin-bottom: 1.25em;
+  }
+
+  input[type="submit"] {
+    padding: 1.5em;
+    margin-bottom: 1.25em;
+  }
+
+  .signup-form p {
+    width: 80%;
+  }
 }
