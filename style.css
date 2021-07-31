@@ -84,7 +84,7 @@ input[type="password"] {
   padding: 1em;
   border: 1px solid hsl(246, 25%, 77%);
   border-radius: 6px;
-  margin-bottom: 0.75em;
+  margin-top: 0.75em;
 }
 
 input[type="text"]::placeholder,
@@ -97,6 +97,30 @@ input[type="password"]::placeholder {
   opacity: 0.7;
 }
 
+input:focus::placeholder {
+  color: transparent;
+}
+
+.input-container {
+  width: 100%;
+  position: relative;
+}
+
+.error-icon {
+  display: none;
+  position: absolute;
+  top: 35%;
+  right: 5%;
+}
+
+.error-message {
+  font-size: 0.75rem;
+  font-style: italic;
+  text-align: right;
+  color: hsl(0, 100%, 74%);
+  margin-top: 0.5em;
+}
+
 input[type="submit"] {
   width: 100%;
   padding: 1em;
@@ -106,9 +130,13 @@ input[type="submit"] {
   background-color: hsl(154, 59%, 51%);
   border: none;
   border-radius: 6px;
-  margin-bottom: 0.75em;
+  margin: 0.75em 0;
   cursor: pointer;
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.4);
+}
+
+input[type="submit"]:hover {
+  opacity: 80%;
 }
 
 .signup-form p {
@@ -138,6 +166,7 @@ input[type="submit"] {
   }
 
   .signup-form {
+    max-width: 600px;
     padding: 2.5em;
   }
 
@@ -146,12 +175,12 @@ input[type="submit"] {
   input[type="email"],
   input[type="password"] {
     padding: 1.5em;
-    margin-bottom: 1.25em;
+    margin-top: 1.25em;
   }
 
   input[type="submit"] {
     padding: 1.5em;
-    margin-bottom: 1.25em;
+    margin: 1.25em 0;
   }
 
   .signup-form p {
