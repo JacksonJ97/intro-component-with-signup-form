@@ -109,7 +109,7 @@ input:focus::placeholder {
 .error-icon {
   display: none;
   position: absolute;
-  top: 35%;
+  top: 25%;
   right: 5%;
 }
 
@@ -166,7 +166,7 @@ input[type="submit"]:hover {
   }
 
   .signup-form {
-    max-width: 600px;
+    width: 600px;
     padding: 2.5em;
   }
 
@@ -176,6 +176,13 @@ input[type="submit"]:hover {
   input[type="password"] {
     padding: 1.5em;
     margin-top: 1.25em;
+  }
+
+  .error-icon {
+    display: none;
+    position: absolute;
+    top: 35%;
+    right: 5%;
   }
 
   input[type="submit"] {
