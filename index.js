@@ -2,49 +2,68 @@ const firstNameElement = document.getElementById("firstname");
 const lastNameElement = document.getElementById("lastname");
 const emailElement = document.getElementById("email");
 const passwordElement = document.getElementById("password");
-const submitBtn = document.getElementById("submit");
+const form = document.getElementById("form");
 
 function addErrorStyles(element) {
   element.style.border = "1px solid hsl(0, 100%, 74%)";
   element.nextElementSibling.style.display = "block";
-  const errorMessage = document.createElement("div");
-  errorMessage.classList.add("error-message");
-  errorMessage.textContent = element.placeholder + " cannot be empty";
-  element.parentNode.append(errorMessage);
+  element.parentNode.children[2].textContent = element.placeholder + " cannot be empty";
 }
 
 function addEmailErrorStyles(element) {
   element.style.border = "1px solid hsl(0, 100%, 74%)";
   element.nextElementSibling.style.display = "block";
-  const errorMessage = document.createElement("div");
-  errorMessage.classList.add("error-message");
-  errorMessage.textContent = "Looks like this is not an email";
-  element.parentNode.append(errorMessage);
+  element.parentNode.children[2].textContent = "Looks like this is not an email";
+}
+
+function removeErrorStyles(element) {
+  element.style.border = "1px solid hsl(246, 25%, 77%)";
+  element.nextElementSibling.style.display = "none";
+  element.parentNode.children[2].textContent = "";
 }
 
 function isEmpty(element) {
   if (element.value == "" || element.value == null) {
-    addErrorStyles(element);
-    return false;
+    return true;
   }
+  return false;
 }
 
 function isValidEmail(element) {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  if (!regex.test(element.value)) {
-    addEmailErrorStyles(element);
+  if (regex.test(element.value)) {
+    return true;
   }
+  return false;
 }
 
-submitBtn.addEventListener(
-  "click",
-  function (e) {
+form.addEventListener("submit", function (e) {
+  if (isEmpty(firstNameElement) || isEmpty(lastNameElement) || !isValidEmail(emailElement) || isEmpty(passwordElement)) {
     e.preventDefault();
-    isEmpty(firstNameElement);
-    isEmpty(lastNameElement);
-    isValidEmail(emailElement);
-    isEmpty(passwordElement);
-  },
-  { once: true }
-);
+
+    if (isEmpty(firstNameElement)) {
+      addErrorStyles(firstNameElement);
+    } else {
+      removeErrorStyles(firstNameElement);
+    }
+
+    if (isEmpty(lastNameElement)) {
+      addErrorStyles(lastNameElement);
+    } else {
+      removeErrorStyles(lastNameElement);
+    }
+
+    if (!isValidEmail(emailElement)) {
+      addEmailErrorStyles(emailElement);
+    } else {
+      removeErrorStyles(emailElement);
+    }
+
+    if (isEmpty(passwordElement)) {
+      addErrorStyles(passwordElement);
+    } else {
+      removeErrorStyles(passwordElement);
+    }
+  }
+});
